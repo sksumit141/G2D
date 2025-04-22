@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Contact from "./components/ui/Contact";
 import Footer from "../src/components/Footer";
 import Publication from "./components/Publication";
+import About from "./components/About";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="pt-20 pb-20">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/publication" element={<Publication />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

@@ -17,14 +17,21 @@ const Navbar = () => {
 
           <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
             <button className=" p-3 rounded-xl">
-              <a href="#" className="hover:text-blue-600 text-lg transition ">
+              {/* <a href="#" className="hover:text-blue-600 text-lg transition ">
                 About Me
-              </a>
+              </a> */}
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `hover:text-blue-600 text-lg transition ${
+                    isActive ? "text-blue-600 font-bold" : "text-gray-600"
+                  }`
+                }
+              >
+                About
+              </NavLink>
             </button>
             <button className=" p-3 rounded-xl">
-              {/* <a href="#" className="hover:text-blue-600 text-lg transition">
-                Publications
-              </a> */}
               <NavLink
                 to="/publication"
                 className={({ isActive }) =>
