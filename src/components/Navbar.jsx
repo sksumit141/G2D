@@ -1,0 +1,104 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <nav className="fixed w-full top-6 z-50">
+      <div className="mx-4 rounded-3xl border border-gray-200 bg-white shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between p-3">
+          <div className="text-2xl font-bold text-blue-600 mt-2">
+            <NavLink to="/">Dr . Pabitra Pal</NavLink>
+          </div>
+
+          <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
+            <button className=" p-3 rounded-xl">
+              <a href="#" className="hover:text-blue-600 text-lg transition ">
+                About Me
+              </a>
+            </button>
+            <button className=" p-3 rounded-xl">
+              {/* <a href="#" className="hover:text-blue-600 text-lg transition">
+                Publications
+              </a> */}
+              <NavLink
+                to="/publication"
+                className={({ isActive }) =>
+                  `hover:text-blue-600 text-lg transition ${
+                    isActive ? "text-blue-600 font-bold" : "text-gray-600"
+                  }`
+                }
+              >
+                Publication
+              </NavLink>
+            </button>
+            <button className=" px-3 rounded-xl">
+              <a href="#" className="hover:text-blue-600 text-lg transition">
+                Talks
+              </a>
+            </button>
+            <button className=" p-3 rounded-xl">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `hover:text-blue-600 text-lg transition ${
+                    isActive ? "text-blue-600 font-bold" : "text-gray-600"
+                  }`
+                }
+              >
+                Contact
+              </NavLink>
+            </button>
+          </div>
+
+          <div className="md:hidden">
+            <button onClick={toggleMenu}>
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {isOpen && (
+        <div className="md:hidden w-40 ml-[70%] mt-2 rounded-xl flex flex-col gap-3   px-4 pb-4 space-y-1 border-2  border-gray-400  bg-gray-200  text-end pr-10 ">
+          <a
+            href="#"
+            className="block text-gray-700 hover:text-blue-600 mr-5  hover:text-lg hover:underline "
+          >
+            About
+          </a>
+
+          <a
+            href="#"
+            className="block text-gray-700 hover:text-blue-600 mr-5 hover:text-lg hover:underline"
+          >
+            Publications
+          </a>
+          <a
+            href="#"
+            className="block text-gray-700 hover:text-blue-600 mr-3 hover:text-lg hover:underline"
+          >
+            Talks
+          </a>
+          <NavLink
+            to="/contact"
+            // className="block text-gray-700 hover:text-blue-600 mr-3 hover:text-lg hover:underline"
+            className={({ isActive }) =>
+              `block  hover:text-blue-600 mr-3 hover:text-lg hover:underline transition ${
+                isActive ? "text-blue-600 font-bold" : "text-gray-600"
+              }`
+            }
+          >
+            Contact
+          </NavLink>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
