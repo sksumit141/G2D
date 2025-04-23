@@ -7,12 +7,12 @@ const About = () => {
   return (
     <div className="">
       <div className="mt-10 mb-5 ">
-        <h1 className=" m-5 text-3xl font-bold text-blue-600 text-center">
+        <h1 className=" m-5 text-5xl font-bold text-blue-600 text-center">
           Students
         </h1>
       </div>
       <Students />
-      
+
       <Teaching />
       <Book />
     </div>

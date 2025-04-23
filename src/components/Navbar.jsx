@@ -17,9 +17,6 @@ const Navbar = () => {
 
           <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
             <button className=" p-3 rounded-xl">
-              {/* <a href="#" className="hover:text-blue-600 text-lg transition ">
-                About Me
-              </a> */}
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
@@ -44,9 +41,16 @@ const Navbar = () => {
               </NavLink>
             </button>
             <button className=" px-3 rounded-xl">
-              <a href="#" className="hover:text-blue-600 text-lg transition">
+              <NavLink
+                to="/talks"
+                className={({ isActive }) =>
+                  `hover:text-blue-600 text-lg transition ${
+                    isActive ? "text-blue-600 font-bold" : "text-gray-600"
+                  }`
+                }
+              >
                 Talks
-              </a>
+              </NavLink>
             </button>
             <button className=" p-3 rounded-xl">
               <NavLink
@@ -72,30 +76,42 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden w-40 ml-[70%] mt-2 rounded-xl flex flex-col gap-3   px-4 pb-4 space-y-1 border-2  border-gray-400  bg-gray-200  text-end pr-10 ">
-          <a
-            href="#"
-            className="block text-gray-700 hover:text-blue-600 mr-5  hover:text-lg hover:underline "
-          >
-            About
-          </a>
-
-          <a
-            href="#"
-            className="block text-gray-700 hover:text-blue-600 mr-5 hover:text-lg hover:underline"
-          >
-            Publications
-          </a>
-          <a
-            href="#"
-            className="block text-gray-700 hover:text-blue-600 mr-3 hover:text-lg hover:underline"
-          >
-            Talks
-          </a>
           <NavLink
-            to="/contact"
-            // className="block text-gray-700 hover:text-blue-600 mr-3 hover:text-lg hover:underline"
+            to="/about"
             className={({ isActive }) =>
               `block  hover:text-blue-600 mr-3 hover:text-lg hover:underline transition ${
+                isActive ? "text-blue-600 font-bold" : "text-gray-600"
+              }`
+            }
+          >
+            About
+          </NavLink>
+
+          <NavLink
+            to="/publication"
+            className={({ isActive }) =>
+              `block  hover:text-blue-600 ml-6 hover:text-lg hover:underline transition ${
+                isActive ? "text-blue-600 font-bold" : "text-gray-600"
+              }`
+            }
+          >
+            Publication
+          </NavLink>
+
+          <NavLink
+            to="/talks"
+            className={({ isActive }) =>
+              `block  hover:text-blue-600 mr-3 hover:text-lg hover:underline transition ${
+                isActive ? "text-blue-600 font-bold" : "text-gray-600"
+              }`
+            }
+          >
+            Talks
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `block  hover:text-blue-600 mr-1 hover:text-lg hover:underline transition ${
                 isActive ? "text-blue-600 font-bold" : "text-gray-600"
               }`
             }

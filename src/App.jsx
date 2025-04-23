@@ -5,6 +5,7 @@ import Contact from "./components/ui/Contact";
 import Footer from "../src/components/Footer";
 import Publication from "./components/Publication";
 import About from "./components/About";
+import Talks from "./components/Talks";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/publication" element={<Publication />} />
+          <Route path="/talks" element={<Talks />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
