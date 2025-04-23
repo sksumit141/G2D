@@ -1,6 +1,9 @@
 import React from "react";
+import Odd24_25 from "./Odd24_25";
+import Even23_24 from "./Even23_24";
+import Odd23_24 from "./Odd23_24";
+import Even22_23 from "./Even22_23";
 import Odd22_23 from "./Odd22_23";
-
 const Teaching = () => {
   return (
     <>
@@ -15,6 +18,10 @@ const Teaching = () => {
           course topics, feel free to message my office, and I will respond as
           soon as possible.
         </p>
+        <Odd24_25 />
+        <Even23_24 />
+        <Odd23_24 />
+        <Even22_23 />
         <Odd22_23 />
       </div>
     </>
