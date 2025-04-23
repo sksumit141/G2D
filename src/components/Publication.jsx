@@ -8,7 +8,13 @@ function publication() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch("http://localhost:5000/publication");
+        const response = await fetch("http://localhost:5000/publication", {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+        });
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

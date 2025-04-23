@@ -6,7 +6,9 @@ const app = express();
 const PORT = 5000;
 
 app.use(cors({
-    origin: 'http://localhost:5175'
+    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Accept'],
 }));
 app.use(express.json());
 
