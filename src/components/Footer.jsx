@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   return (
@@ -28,8 +29,14 @@ const Navbar = () => {
 
         <hr className="border-black border" />
 
-        <div className="flex justify-center md:justify-center pr-0 md:pr-10 bg-white border-2 border-gray-200 shadow-lg text-black">
-          <p>@ 2025 &lt; Gen2De / &gt;</p>
+        <div className="flex flex-row justify-center md:justify-center pr-0 md:pr-10 bg-white border-2 border-gray-200 shadow-lg text-black">
+          {/* <p>@ 2025 &lt; Gen2De / &gt;</p> */}
+          <p className="flex justify-center items-center gap-5">
+            @ 2025
+            <span>
+              <img src={logo} alt="" className="w-20" />
+            </span>
+          </p>
         </div>
       </div>
     </>
