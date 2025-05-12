@@ -4,10 +4,11 @@ import Even23_24 from "./Even23_24";
 import Odd23_24 from "./Odd23_24";
 import Even22_23 from "./Even22_23";
 import Odd22_23 from "./Odd22_23";
+import Book from "../ui/Book";
 const Teaching = () => {
   return (
     <>
-      <div className="bg-white shadow-lg border border-gray-200 rounded-xl p-5 sm:p-6 space-y-4 text-gray-800 transition hover:shadow-xl w-[96%] overflow-hidden hover:overflow-y-auto m-4 sm:m-5 lg:m-6">
+      <div className="bg-white shadow-lg border border-gray-200 rounded-xl p-5 sm:p-6 space-y-4 text-gray-800 transition hover:shadow-xl w-[96%] overflow-hidden hover:overflow-y-auto m-4 sm:m-5 lg:m-6 mt-20">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-500 text-center pb-4 sm:pb-5">
           Teaching
         </h2>
@@ -24,6 +25,7 @@ const Teaching = () => {
         <Even22_23 />
         <Odd22_23 />
       </div>
+      <Book />
     </>
   );
 };
