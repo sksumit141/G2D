@@ -37,7 +37,7 @@ const Navbar = () => {
                 >
                   <NavLink
                     className={`hover:text-blue-600 text-lg transition 
-                      ${setOpen ? "text-blue-600 font-bold" : "text-gray-600"}`}
+    ${open ? "text-blue-600 font-bold" : "text-gray-600"}`}
                   >
                     About
                   </NavLink>
@@ -129,7 +129,7 @@ const Navbar = () => {
             >
               <NavLink
                 className={`hover:text-blue-600 text-lg transition 
-                      ${setOpen ? "text-blue-600 font-bold" : "text-gray-600"}`}
+    ${open ? "text-blue-600 font-bold" : "text-gray-600"}`}
               >
                 About
               </NavLink>
