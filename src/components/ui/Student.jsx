@@ -1,78 +1,99 @@
 import React from "react";
+
 const currentStudent = [
   {
     name: "Sachchidananda Jana (PhD, Co-Supervised by Dr. Ashim Mahadani, BUIE)",
     department: "(MCA 2024)",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "Amit Ruidas ( Co-Supervised by Dr. Ashim Mahadani, BUIE)",
     department: "(MTech)",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "Debolina Bhattacharya ( Co-Supervised by Dr. Ashim Mahadani, BUIE) ",
     department: "(MTech)",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "Saroj Manna (Co-supervised by Dr. Sayani Mondal, SNU)",
     department: "(MTech AI )",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "Sandipan Pal (Co-supervised by Dr. Sayani Mondal, SNU)",
     department: "(MTech AI )",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "Sattwik Roy Chowdhury (Co-supervised by Dr. Sayani Mondal, SNU)",
     department: "(MSc in DS )",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "Chitra Chattaraj (Co-supervised by Siddhartha Bhaumick)",
     department: "(MTech DS )",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "RAHAMAT SEKH",
     department: "(Image Processing)",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "KHUSHJIT KARMAKAR ",
     department: "(Quantum Computing)",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "SOUVIK SASMAL",
     department: "",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "ARNAB ROY ",
     department: "(MCA) Multimedia Security",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "SHUBHADIP CHAND 	",
     department: "(5G & IoT)",
-    photo: "",
+    photo: "src/assets/student.png",
   },
   {
     name: "SOUVIK SHIL	",
     department: "(Quantum Computing)",
-    photo: "",
+    photo: "src/assets/student.png",
   },
 ];
 const graduatedStudent = [
-  { name: "Riya Jana ", department: "(MCA 2024)", photo: "" },
-  { name: "Ankan Ghosh ", department: "(MSc AI 2024)", photo: "" },
-  { name: "Swapnil ", department: "(MSc DS 2024)", photo: "" },
+  {
+    name: "Riya Jana ",
+    department: "(MCA 2024)",
+    photo: "src/assets/student.png",
+  },
+  {
+    name: "Ankan Ghosh ",
+    department: "(MSc AI 2024)",
+    photo: "src/assets/student.png",
+  },
+  {
+    name: "Swapnil ",
+    department: "(MSc DS 2024)",
+    photo: "src/assets/student.png",
+  },
 
-  { name: "Ankan Ghosh ", department: "(MSc AI 2024)", photo: "" },
-  { name: "Soumen Jana ", department: "(MSc DS 2023)", photo: "" },
+  {
+    name: "Ankan Ghosh ",
+    department: "(MSc AI 2024)",
+    photo: "src/assets/student.png",
+  },
+  {
+    name: "Soumen Jana ",
+    department: "(MSc DS 2023)",
+    photo: "src/assets/student.png",
+  },
 ];
 
 const Students = () => {
