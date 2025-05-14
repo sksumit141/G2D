@@ -1,9 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const { getJson } = require("serpapi");
+const fs = require('fs').promises;
+const path = require('path');
 
 const app = express();
 const PORT = 5000;
+const CACHE_FILE = path.join(__dirname, 'cache', 'articles.json');
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 app.use(cors({
     origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
@@ -15,13 +19,61 @@ app.use(express.json());
 const apiKey = "158e9360b057d7ad9fcb36024486901836faed8efd0e4aade663348d1a209058";
 const authorId = "5ZbrGfUAAAAJ&hl";
 
+const ensureCacheDirectory = async () => {
+    const cacheDir = path.dirname(CACHE_FILE);
+    try {
+        await fs.access(cacheDir);
+    } catch {
+        await fs.mkdir(cacheDir, { recursive: true });
+    }
+};
+
+const getCachedArticles = async () => {
+    try {
+        const data = await fs.readFile(CACHE_FILE, 'utf8');
+        const cache = JSON.parse(data);
+        
+        if (Date.now() - cache.timestamp < CACHE_DURATION) {
+            console.log('Using cached articles');
+            return cache.articles;
+        }
+    } catch (error) {
+        console.log('No valid cache found');
+    }
+    return null;
+};
+
+const updateCache = async (articles) => {
+    try {
+        await ensureCacheDirectory();
+        await fs.writeFile(
+            CACHE_FILE,
+            JSON.stringify({
+                articles,
+                timestamp: Date.now()
+            }, null, 2)
+        );
+        console.log('Cache updated');
+    } catch (error) {
+        console.error('Failed to update cache:', error);
+    }
+};
+
 const fetchAllArticles = async () => {
     try {
+        // Try to get cached articles first
+        const cachedArticles = await getCachedArticles();
+        if (cachedArticles) {
+            return cachedArticles;
+        }
+
+        // If no cache, fetch from API
+        console.log('Fetching from API...');
         const params = {
             engine: "google_scholar_author",
             author_id: authorId,
             api_key: apiKey,
-            num: 100 // Request maximum number of results
+            num: 100
         };
 
         const json = await getJson(params);
@@ -30,6 +82,8 @@ const fetchAllArticles = async () => {
             throw new Error("No articles found");
         }
 
+        // Update cache with new data
+        await updateCache(json.articles);
         return json.articles;
     } catch (error) {
         console.error("Error in fetchAllArticles:", error);
