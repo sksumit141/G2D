@@ -21,7 +21,7 @@ const Book = () => {
               (Entrance Exam Book for MCA Aspirants)
             </h2>
             <p>
-              by-{" "}
+              by-
               <span className="text-blue-600">
                 Dr. Pabitra Pal, Dr. Partha Chowdhuri, & Mr. Prabhash Kumar
                 Singh
