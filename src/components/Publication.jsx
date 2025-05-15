@@ -72,7 +72,7 @@ function Publication() {
         </div>
       </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4 sm:gap-6 auto-rows-fr">
         {articles.map((article, index) => (
           <article
             key={index}
