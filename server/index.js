@@ -3,6 +3,7 @@ const cors = require("cors");
 const { getJson } = require("serpapi");
 const fs = require('fs').promises;
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 const PORT = 5000;
@@ -10,14 +11,14 @@ const CACHE_FILE = path.join(__dirname, 'cache', 'articles.json');
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+    origin: [process.env.FRONTEND_URL, process.env.FRONTEND_URL.replace('http://', 'http://127.0.0.1:')],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Accept'],
 }));
 app.use(express.json());
 
-const apiKey = "158e9360b057d7ad9fcb36024486901836faed8efd0e4aade663348d1a209058";
-const authorId = "5ZbrGfUAAAAJ&hl";
+const apiKey = process.env.API_KEY;
+const authorId = process.env.AUTHOR_ID;
 
 const ensureCacheDirectory = async () => {
     const cacheDir = path.dirname(CACHE_FILE);
