@@ -8,10 +8,12 @@ import Publication from "./components/Publication";
 import Talks from "./components/Talks";
 import Teaching from "./components/ui/Teaching";
 import Students from "./components/ui/Student";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <div className="pt-20 pb-20">
         <Routes>
