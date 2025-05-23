@@ -307,6 +307,20 @@
       "year": "2021"
     },
     {
+      "title": "Tsi-cnn-net: truly shift-invariant convolutional neural network for Indian sign language recognition system",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5ZbrGfUAAAAJ&pagesize=100&citation_for_view=5ZbrGfUAAAAJ:2P1L_qKh6hAC",
+      "citation_id": "5ZbrGfUAAAAJ:2P1L_qKh6hAC",
+      "authors": "A Ghorai, U Nandi, MM Singh, C Changdar, B Paul, P Chowdhuri, P Pal",
+      "publication": "Pattern Analysis and Applications 28 (2), 52, 2025",
+      "cited_by": {
+        "value": 2,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=18293103400932203276",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18293103400932203276&engine=google_scholar&hl=en",
+        "cites_id": "18293103400932203276"
+      },
+      "year": "2025"
+    },
+    {
       "title": "An iwt based reversible watermarking scheme using lagrange interpolation polynomial",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5ZbrGfUAAAAJ&pagesize=100&citation_for_view=5ZbrGfUAAAAJ:j3f4tGmQtD8C",
       "citation_id": "5ZbrGfUAAAAJ:j3f4tGmQtD8C",
@@ -347,20 +361,6 @@
         "cites_id": "15973445930167781725"
       },
       "year": "2017"
-    },
-    {
-      "title": "Tsi-cnn-net: truly shift-invariant convolutional neural network for Indian sign language recognition system",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5ZbrGfUAAAAJ&pagesize=100&citation_for_view=5ZbrGfUAAAAJ:2P1L_qKh6hAC",
-      "citation_id": "5ZbrGfUAAAAJ:2P1L_qKh6hAC",
-      "authors": "A Ghorai, U Nandi, MM Singh, C Changdar, B Paul, P Chowdhuri, P Pal",
-      "publication": "Pattern Analysis and Applications 28 (2), 52, 2025",
-      "cited_by": {
-        "value": 1,
-        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=18293103400932203276",
-        "serpapi_link": "https://serpapi.com/search.json?cites=18293103400932203276&engine=google_scholar&hl=en",
-        "cites_id": "18293103400932203276"
-      },
-      "year": "2025"
     },
     {
       "title": "A robust watermarking approach for medical image authentication using dual image and quorum function",
@@ -539,5 +539,5 @@
       "year": ""
     }
   ],
-  "timestamp": 1747327315302
+  "timestamp": 1748031768357
 }
