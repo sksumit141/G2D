@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { getJson } = require("serpapi");
+const helmet = require('helmet');
 const fs = require('fs').promises;
 const path = require('path');
 require('dotenv').config();
@@ -9,6 +10,16 @@ const app = express();
 const PORT = 5000;
 const CACHE_FILE = path.join(__dirname, 'cache', 'articles.json');
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      scriptSrc: ["'self'"],
+      imgSrc: ["'self'", "data:"]
+    }
+}));
 
 app.use(cors({
     origin: [process.env.FRONTEND_URL, 'https://gdfrontend.netlify.app', 'http://localhost:5173', 'http://127.0.0.1:5173'],
