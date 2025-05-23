@@ -11,7 +11,7 @@ const CACHE_FILE = path.join(__dirname, 'cache', 'articles.json');
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 app.use(cors({
-    origin: [process.env.FRONTEND_URL, process.env.FRONTEND_URL.replace('http://', 'http://127.0.0.1:')],
+    origin: [process.env.FRONTEND_URL],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Accept'],
 }));
